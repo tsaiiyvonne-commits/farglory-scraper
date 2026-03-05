@@ -1,0 +1,48 @@
+﻿編號,原始檔案名稱,爬蟲目標網址,爬蟲狀態與備註 (HTTP),工程師爬取操作步驟建議
+1,24Q4-asia-pacific-office-market-dynamics_JLL.pdf,https://www.jll.com.au/en/trends-and-insights/research,✅ 可通行 (200),"1. 存取 JLL Research 頁面
+2. 撰寫程式填寫表單
+3. 取得實際 PDF 連結並下載"
+2,25Q1 Aus market Dexus.pdf,https://www.dexus.com/discover-dexus/research,✅ 可通行 (200),"1. 存取 Dexus 研究專區
+2. 尋找對應季度的網頁及下載按鈕
+3. 直接點擊/抓取 PDF 連結"
+3,25Q1 Australian CBD Office Snapshot Colliers.pdf,https://www.colliers.com.au/en-au/research,🛡️ 有防護 (需繞過 Cloudflare),"1. 使用 curl_cffi 偽裝 Chrome 120 瀏覽器指紋
+2. 存取頁面繞過 403 阻擋
+3. 擷取 PDF 列表並下載"
+4,25Q2-drivers-of-the-australian-dollar-RBA.pdf,https://www.rba.gov.au/publications/,🛡️ 有防護 (需繞過 WAF),"1. 使用 curl_cffi 偽裝瀏覽器指紋
+2. 進入澳洲央行專區搜尋報告
+3. 下載無權限管制的 PDF"
+5,2025 office-leasing-year-in-review-and-outlook_JLL.pdf,https://www.jll.com.au/en/trends-and-insights/research,✅ 可通行 (200),(同編號 1，屬 JLL 操作流程，需處理填表邏輯)
+6,2412 Office Market Outlook Investa.pdf,https://www.investa.com.au/insights,⚠️ 網頁失效/改版 (404),"1. 工程師需先上 Investa 新官網尋找最新的 Insights 入口
+2. 更新爬蟲啟動網址"
+7,2505 Australia_Prepared for Farglory LaSalle.pdf,https://www.lasalle.com/research,⚠️ 阻擋且網頁改版 (404),"1. 需先繞過防火牆
+2. 找出新版報告網址
+3. 實作下載邏輯"
+8,20250701_RCA_Transaction_Report $100m+ 2024-present.pdf,https://www.msci.com/our-solutions/real-assets/real-capital-analytics,✅ 可通行 (可能需登入),"1. 存取 MSCI 平台頁面
+2. 若報告為付費牆內，實作自動登入
+3. 進入客製化報表頁面下載"
+9,JLL apac property investment guide 2024.pdf,https://www.jll.com.au/en/trends-and-insights/research,✅ 可通行 (200),(同編號 1，屬 JLL 操作流程，需處理填表邏輯)
+10,KWM-Investing-Down-Under-Guide-2025.pdf,https://www.kwm.com/au/en/insights.html,✅ 可通行 (200),"1. 存取 KWM 洞察專區
+2. 尋找 PDF 標籤下載"
+11,Sydney and Brisbane office markets.docx,(未具名/待確認來源),❓ 來源不明,"1. 需客戶確認發布機構官網
+2. 工程師評估抓取方式"
+12,24Q4 brisbane-office-market-dynamic_JLL.pdf,https://www.jll.com.au/en/trends-and-insights/research,✅ 可通行 (200),(同編號 1，屬 JLL 操作流程)
+13,24Q4_Research_Figures_-_Brisbane_ CBRE.pdf,https://www.cbre.com.au/insights,✅ 可通行 (200),"1. 存取 CBRE 頁面
+2. 模擬填寫表單或直接抓取 PDF"
+14,25Q1 brisbane-cbd-office-state-of-the-market-KF.pdf,https://www.knightfrank.com.au/research,✅ 可通行 (200),"1. 存取萊坊研究專區
+2. 下載 PDF"
+15,25Q1_Research_Figures_-_Brisbane- CBRE.pdf,https://www.cbre.com.au/insights,✅ 可通行 (200),(同編號 13，屬 CBRE 操作流程)
+16,2405 Into the Golden Decade..._Colliers.pdf,https://www.colliers.com.au/en-au/research,🛡️ 有防護 (需繞過 Cloudflare),(同編號 3，屬 Colliers 操作流程)
+17,2504- brisbane-cbd-office-market-KF.pdf,https://www.knightfrank.com.au/research,✅ 可通行 (200),(同編號 14，屬萊坊操作流程)
+18,Olympics Brisbane_CBRE.pdf,https://www.cbre.com.au/insights,✅ 可通行 (200),(同編號 13，屬 CBRE 操作流程)
+19,24H2-syd-Savills.pdf,https://www.savills.com.au/research.aspx,⚠️ 網頁失效/改版 (404),"1. 至 Savills 官網尋找新網址
+2. 撰寫下載流程"
+20,24Q4 CBD Office Snapshot-Colliers.pdf,https://www.colliers.com.au/en-au/research,🛡️ 有防護 (需繞過 Cloudflare),(同編號 3，屬 Colliers 操作流程)
+21,24Q4_Research_Figures_-_Sydney_CBRE.pdf,https://www.cbre.com.au/insights,✅ 可通行 (200),(同編號 13，屬 CBRE 操作流程)
+22,25Q1_Research_Figures_-_Sydney-CBRE.pdf,https://www.cbre.com.au/insights,✅ 可通行 (200),(同編號 13，屬 CBRE 操作流程)
+23,25Q1-sydney-cbd-office_Cushman.pdf,https://www.cushmanwakefield.com/en/australia/insights,✅ 可通行 (200),"1. 存取戴德梁行 Insights 專區
+2. 解析下載點"
+24,25Q1-sydney-cbd-office-state- KF.pdf,https://www.knightfrank.com.au/research,✅ 可通行 (200),(同編號 14，屬萊坊操作流程)
+25,2501 Office market report propoertycouncil.pdf,https://www.propertycouncil.com.au/research,✅ 可通行 (200),"1. 存取澳洲地產委員會專區
+2. 解析報告列表"
+26,2502 sydney-cbd-office-market KF.pdf,https://www.knightfrank.com.au/research,✅ 可通行 (200),(同編號 14，屬萊坊操作流程)
+27,Map CBD 18 sydney-cbd-office-market KF.pdf,https://www.knightfrank.com.au/research,✅ 可通行 (200),(同編號 14，屬萊坊操作流程)
