@@ -24,7 +24,7 @@ class Config:
     
     # --- 檔案儲存設定 ---
     # 此路徑讓爬蟲下載的 PDF 直接存入客服/業務 iCloud 分享目錄下
-    BASE_DOWNLOAD_DIR = "/Users/tsaiyvonne/Library/Mobile Documents/com~apple~CloudDocs/share files/Dobby/業務/[3]Sales Lead/20260126遠雄/[3]客戶給的data/AI project(全部顧問報告)/自動化下載區"
+    BASE_DOWNLOAD_DIR = "/path/to/your/local/download/folder"
     
     # --- 爬蟲請求設定 ---
     # 偽裝成 Chrome 120，繞過 Cloudflare/WAF 防護 (如 Colliers, RBA)

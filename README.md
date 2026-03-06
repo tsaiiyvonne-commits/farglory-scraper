@@ -1,15 +1,15 @@
-# 遠雄爬蟲專案 (Farglory Scraper)
+# 商仲報告爬蟲專案 (Real Estate Scraper)
 
-這是一個自動化的 Python 網頁爬蟲與系統拋轉框架。目的是針對指定的全球商仲與顧問機構（包含 JLL, Colliers, CBRE 等 10+ 家機構）定期抓取其最新的市場研究報告（PDF），並串接 Dobby 平台 API，達成地產市場資訊收集的自動化。
+這是一個自動化的 Python 網頁爬蟲與系統拋轉框架。目的是針對指定的全球商仲與顧問機構（包含 JLL, Colliers, CBRE 等 10+ 家機構）定期抓取其最新的市場研究報告（PDF），並串接 TargetSystem 平台 API，達成地產市場資訊收集的自動化。
 
-本專案提供已經過驗證的架構底座、反爬蟲繞過技術示範，以及與 Dobby 介接的相容標準。
+本專案提供已經過驗證的架構底座、反爬蟲繞過技術示範，以及與 TargetSystem 介接的相容標準。
 
 ## 🎯 專案目標與任務
 
 1. **定時排程抓取**：設定 Cronjob 或排程腳本，定期拜訪各家商仲的研究報告頁面。
 2. **反爬蟲突破**：內建 `curl_cffi` 技術，能成功模擬 Chrome 120 的 TLS 指紋，突破 Colliers 或澳洲央行 (RBA) 等使用的 Cloudflare WAF 防火牆。
 3. **實體檔案下載**：將抓取到的公開 PDF 報告，自動儲存至 iCloud 的共享資料夾內。
-4. **Dobby API 整合**：採用 Compatible API (JSON Format) 標準，將最新檔案的儲存路徑與 Metadata（如報告來源、報表時間等）推送給 Dobby 應用程式。
+4. **TargetSystem API 整合**：採用 Compatible API (JSON Format) 標準，將最新檔案的儲存路徑與 Metadata（如報告來源、報表時間等）推送給 TargetSystem 應用程式。
 
 ## 📂 專案檔案結構
 
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 1. **JLL / 部分商仲的 Lead Gen 表單**：這類網站的 PDF 下載連結往往藏在一組名單蒐集表單（填寫 Name / Email / Company）之後。工程師需撰寫額外的自動 POST 表單邏輯。
 2. **MSCI (RCA) 付費牆**：此報告來源可能需要實作自動登入機制（帶 Cookie 或 Token Session）才能下載。
-3. **客製化報告 (Prepared For Farglory)**：若發現不在外網公開的顧問交付報告，不應使用本系統去網站硬爬。這類目標建議改為編寫 E-mail (如 Outlook/Gmail 附加檔案自動下載) 腳本。
+3. **客製化報告 (Prepared For ClientName)**：若發現不在外網公開的顧問交付報告，不應使用本系統去網站硬爬。這類目標建議改為編寫 E-mail (如 Outlook/Gmail 附加檔案自動下載) 腳本。
 
 ## 執行與部署
 
