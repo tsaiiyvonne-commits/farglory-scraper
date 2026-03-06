@@ -1,44 +1,42 @@
-﻿編號,原始檔案名稱,爬蟲目標網址,爬蟲狀態與備註 (HTTP),工程師爬取操作步驟建議
-1,24Q2 CentralLondonMarketUpdate BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),"1. 存取 BNPPRE 英國區研究頁面
+"編號","原始檔案名稱","爬蟲目標網址","爬蟲狀態與備註 (HTTP)","工程師爬取操作步驟建議"
+"1","24Q2 CentralLondonMarketUpdate BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","1. 存取 BNPPRE 英國區研究頁面
 2. 解析月報/季報
 3. 抓取 PDF 連結並下載"
-2,24Q3 manhattan_office-C&W.pdf,https://www.cushmanwakefield.com/en/united-kingdom/insights,✅ 可通行 (200),"1. 存取戴德梁行英國區洞察頁面
+"2","24Q3 manhattan_office-C&W.pdf","https://www.cushmanwakefield.com/en/united-kingdom/insights","✅ 可通行 (200)","1. 存取戴德梁行英國區洞察頁面
 2. 過濾 Office 報告
 3. 抓取公開 PDF"
-3,24Q3 Pan European Office occupier survey BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-4,24Q3 san-francisco office-C&W.pdf,https://www.cushmanwakefield.com/en/united-kingdom/insights,✅ 可通行 (200),(同編號 2)
-5,24Q3-australia-sydney-cbd-office-C&W.pdf,https://www.cushmanwakefield.com/en/united-kingdom/insights,✅ 可通行 (200),(同編號 2)
-6,24Q3-Central London Office Market -Quadrant.pdf,https://www.quadrantestates.com/,⚠️ 確切研報網址需更新 (404),"1. 需確認發布報告的 URL 子路徑
+"3","24Q3 Pan European Office occupier survey BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"4","24Q3 san-francisco office-C&W.pdf","https://www.cushmanwakefield.com/en/united-kingdom/insights","✅ 可通行 (200)","(同編號 2)"
+"5","24Q3-australia-sydney-cbd-office-C&W.pdf","https://www.cushmanwakefield.com/en/united-kingdom/insights","✅ 可通行 (200)","(同編號 2)"
+"6","24Q3-Central London Office Market -Quadrant.pdf","https://www.quadrantestates.com/","⚠️ 確切研報網址需更新 (404)","1. 需確認發布報告的 URL 子路徑
 2. 根據新路徑撰寫簡易抓取器"
-7,24Q3-Central London Report-Savills.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),"1. 尋找 Savills 英國新版 Research 網址
+"7","24Q3-Central London Report-Savills.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","1. 尋找 Savills 英國新版 Research 網址
 2. 撰寫自動填表邏輯"
-8,24Q3-Central_London_Office_Figures-CBRE.pdf,https://www.cbre.co.uk/insights,✅ 可通行 (200),"1. 存取 CBRE 英國洞察專區
+"8","24Q3-Central_London_Office_Figures-CBRE.pdf","https://www.cbre.co.uk/insights","✅ 可通行 (200)","1. 存取 CBRE 英國洞察專區
 2. 抓取最新數字報告 PDF"
-9,24Q3-CentralLondonMarketUpdate-BNP.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-10,24Q3-EC3 slides-Savills.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),(同編號 7)
-11,24Q3-uk-economic-outlook-CBRE.pdf,https://www.cbre.co.uk/insights,✅ 可通行 (200),(同編號 8)
-12,2012-2026-crossrail property impact...-GVA.pdf,https://www.avisonyoung.co.uk/research,✅ 可通行 (200),"1. GVA 被 Avison Young 收購
+"9","24Q3-CentralLondonMarketUpdate-BNP.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"10","24Q3-EC3 slides-Savills.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","(同編號 7)"
+"11","24Q3-uk-economic-outlook-CBRE.pdf","https://www.cbre.co.uk/insights","✅ 可通行 (200)","(同編號 8)"
+"12","2012-2026-crossrail property impact...-GVA.pdf","https://www.avisonyoung.co.uk/research","✅ 可通行 (200)","1. GVA 被 Avison Young 收購
 2. 在 Avison Young 網站抓取報告"
-13,2408 24H2Eurpoean property market Forecast BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-14,2408 city-investment-watch Savills.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),(同編號 7)
-15,2408 global-real-estate-perspective JLL.pdf,https://www.jll.co.uk/en/trends-and-insights/research,✅ 可通行 (200),"1. 前往 JLL 研究專區
+"13","2408 24H2Eurpoean property market Forecast BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"14","2408 city-investment-watch Savills.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","(同編號 7)"
+"15","2408 global-real-estate-perspective JLL.pdf","https://www.jll.co.uk/en/trends-and-insights/research","✅ 可通行 (200)","1. 前往 JLL 研究專區
 2. 實作自動填表
 3. 取得連結下載"
-16,2408 UK_Economic_Real_Estate_Briefing BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-17,2409 Europe CRE 360 BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-18,2409 leading-indicators KF.pdf,https://www.knightfrank.co.uk/research,✅ 可通行 (200),"1. 存取萊坊英國區研究平台
+"16","2408 UK_Economic_Real_Estate_Briefing BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"17","2409 Europe CRE 360 BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"18","2409 leading-indicators KF.pdf","https://www.knightfrank.co.uk/research","✅ 可通行 (200)","1. 存取萊坊英國區研究平台
 2. 擷取清單下載 PDF"
-19,2409 UK_Economic_Real_Estate_Briefing BNPPRE.pdf,https://www.realestate.bnpparibas.co.uk/insights/research,✅ 可通行 (200),(同編號 1)
-20,241027_Quadrant Research .pdf,https://www.quadrantestates.com/,⚠️ 確切研報網址需更新 (404),(同編號 6)
-21,241126 海外辦公市場調研及投資規劃.pdf,(未具名：客製化報告),❓ 需確認來源,"1. 請確認發布來源
+"19","2409 UK_Economic_Real_Estate_Briefing BNPPRE.pdf","https://www.realestate.bnpparibas.co.uk/insights/research","✅ 可通行 (200)","(同編號 1)"
+"20","241027_Quadrant Research .pdf","https://www.quadrantestates.com/","⚠️ 確切研報網址需更新 (404)","(同編號 6)"
+"21","241126 海外辦公市場調研及投資規劃.pdf","(未具名：客製化報告)","❓ 需確認來源","1. 請確認發布來源
 2. 無法爬蟲則建議設定 Outlook 自動下載"
-22,City office take-up spikes in first half of 2024.pdf,(推測為公關稿),❓ 需確認來源,"1. 根據檔案內文判斷來源機構
+"22","City office take-up spikes in first half of 2024.pdf","(推測為公關稿)","❓ 需確認來源","1. 根據檔案內文判斷來源機構
 2. 撰寫對應機構的爬蟲"
-23,city-investment-watch-september-2024.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),(同編號 7)
-24,Q2 2024 Central London Office Market - Farglory.pdf,(Farglory 客製化報告),❓ 需提供管道,"1. 建議不寫網頁爬蟲
-2. 改寫 E-mail 自動收信腳本"
-25,Q3 2024 Central London Office Market -Quadrant.pdf,https://www.quadrantestates.com/,⚠️ 確切研報網址需更新 (404),(同編號 6)
-26,September 2024 - Brief Market Update.pdf,(未具名短報),❓ 需確認來源,"1. 確認發行單位
+"23","city-investment-watch-september-2024.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","(同編號 7)"
+"25","Q3 2024 Central London Office Market -Quadrant.pdf","https://www.quadrantestates.com/","⚠️ 確切研報網址需更新 (404)","(同編號 6)"
+"26","September 2024 - Brief Market Update.pdf","(未具名短報)","❓ 需確認來源","1. 確認發行單位
 2. 套用該單位的邏輯"
-27,west-end-investment-watch-aug-24.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),(同編號 7)
-28,West-End-Investment-Watch-Sep-24.pdf,https://www.savills.co.uk/insight-and-opinion/research.aspx,⚠️ 網頁改版/需更新 URL (404),(同編號 7)
+"27","west-end-investment-watch-aug-24.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","(同編號 7)"
+"28","West-End-Investment-Watch-Sep-24.pdf","https://www.savills.co.uk/insight-and-opinion/research.aspx","⚠️ 網頁改版/需更新 URL (404)","(同編號 7)"
