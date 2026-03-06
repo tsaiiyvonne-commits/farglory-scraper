@@ -18,12 +18,12 @@ except ImportError:
 # 模組 1：系統與資料夾設定 (Configuration)
 # ==========================================
 class Config:
-    # --- Dobby 平台連線設定 ---
-    DOBBY_API_ENDPOINT = "https://api.dobby.ai/v1/documents"  # TODO: 替換為實際 Dobby 平台接收點
-    DOBBY_API_TOKEN = "YOUR_DOBBY_API_TOKEN"
+    # --- TargetSystem 平台連線設定 ---
+    TARGET_API_ENDPOINT = "https://api.targetsystem.ai/v1/documents"  # TODO: 替換為實際 TargetSystem 平台接收點
+    TARGET_API_TOKEN = "YOUR_TARGET_API_TOKEN"
     
     # --- 檔案儲存設定 ---
-    # 此路徑讓爬蟲下載的 PDF 直接存入客服/業務 iCloud 分享目錄下
+    # 此路徑讓爬蟲下載的 PDF 直接存入客服/業務分享目錄下
     BASE_DOWNLOAD_DIR = "/path/to/your/local/download/folder"
     
     # --- 爬蟲請求設定 ---
@@ -36,7 +36,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - [%(name)s] [%(levelname)s] - %(message)s'
 )
-logger = logging.getLogger("DobbyScraper")
+logger = logging.getLogger("TargetScraper")
 
 # ==========================================
 # 模組 2：各站點專用爬蟲邏輯 (Scrapers)
@@ -65,7 +65,7 @@ class ReportScrapers:
         return []
     
     def fetch_all_mock_data(self) -> list:
-        """提供一組假資料供架構測試與 Dobby 平台串接驗證 (實際上線時應移除)"""
+        """提供一組假資料供架構測試與 TargetSystem 平台串接驗證 (實際上線時應移除)"""
         logger.info("取得測試用模擬報告清單...")
         return [
             {
@@ -89,7 +89,7 @@ class FileDownloader:
     @staticmethod
     def download(report_info: dict, session) -> str:
         """
-        將 PDF 從 URL 下載並儲存到本地 iCloud 資料夾
+        將 PDF 從 URL 下載並儲存到本地資料夾
         回傳: 下載成功後的本地檔案絕對路徑 (若失敗回傳 None)
         """
         filename = report_info.get("filename", f"report_{int(time.time())}.pdf")
@@ -119,19 +119,19 @@ class FileDownloader:
             return None
 
 # ==========================================
-# 模組 4：Dobby API 統一推送介面 (DobbyIntegrator)
+# 模組 4：TargetSystem API 統一推送介面 (TargetIntegrator)
 # ==========================================
-class DobbyIntegrator:
+class TargetIntegrator:
     @staticmethod
-    def push_to_dobby(local_file_path: str, metadata: dict):
+    def push_to_system(local_file_path: str, metadata: dict):
         """
-        將剛下載的檔案路徑與元資料，以 Compatible API (JSON) 的標準推送給 Dobby。
+        將剛下載的檔案路徑與元資料，以 Compatible API (JSON) 的標準推送給 TargetSystem。
         """
         if not local_file_path:
             return False
 
         headers = {
-            "Authorization": f"Bearer {Config.DOBBY_API_TOKEN}",
+            "Authorization": f"Bearer {Config.TARGET_API_TOKEN}",
             "Content-Type": "application/json"
         }
         
@@ -143,7 +143,7 @@ class DobbyIntegrator:
                 "source_system": "python_crawler_v2",   # 系統來源標記
                 "document_info": {
                     "file_name": os.path.basename(local_file_path),
-                    "absolute_file_path": local_file_path,  # 供 Dobby 平台存取實體 iCloud 檔案
+                    "absolute_file_path": local_file_path,  # 供 TargetSystem 平台存取實體檔案
                     "report_source": metadata.get("source", "Unknown"), # 報告來源機構 (例: CBRE)
                     "report_date": metadata.get("report_date", ""),
                     "scraped_at": datetime.now().isoformat()
@@ -151,17 +151,17 @@ class DobbyIntegrator:
             }
         }
         
-        logger.info(f"📤 準備拋轉 Dobby 平台: {os.path.basename(local_file_path)}")
+        logger.info(f"📤 準備拋轉 TargetSystem 平台: {os.path.basename(local_file_path)}")
         logger.debug(f"Payload 詳細內容: \n{json.dumps(payload, ensure_ascii=False, indent=2)}")
         
         try:
             # --- 實際 API 呼叫 (接手工程師於上線前解開註解) ---
-            # response = requests.post(Config.DOBBY_API_ENDPOINT, json=payload, headers=headers)
+            # response = requests.post(Config.TARGET_API_ENDPOINT, json=payload, headers=headers)
             # response.raise_for_status()
-            logger.info("✅ 拋轉 Dobby API 成功 (模擬模式)！")
+            logger.info("✅ 拋轉 TargetSystem API 成功 (模擬模式)！")
             return True
         except Exception as e:
-            logger.error(f"🚨 拋轉 Dobby 平台發生連線失敗: {e}")
+            logger.error(f"🚨 拋轉 TargetSystem 平台發生連線失敗: {e}")
             return False
 
 # ==========================================
@@ -169,7 +169,7 @@ class DobbyIntegrator:
 # ==========================================
 def run_daily_pipeline():
     """每日定期執行的主流程：爬取清單 -> 下載檔案 -> 推送 API 通知"""
-    logger.info("========== 啟動爬蟲與 Dobby 拋轉任務 ==========")
+    logger.info("========== 啟動爬蟲與 TargetSystem 拋轉任務 ==========")
     
     scraper = ReportScrapers()
     
@@ -179,17 +179,17 @@ def run_daily_pipeline():
     
     # 步驟 2 & 步驟 3：依序下載與推送
     for report in pending_reports:
-        # 下載檔案至 iCloud 分享資料夾
+        # 下載檔案至分享資料夾
         saved_path = FileDownloader.download(report, scraper.session)
         
         # 推送更新事件至平台 API
         if saved_path:
-            DobbyIntegrator.push_to_dobby(saved_path, report)
+            TargetIntegrator.push_to_system(saved_path, report)
             
     logger.info("========== 任務執行完畢，系統進入休眠 ==========\n")
 
 if __name__ == "__main__":
-    logger.info("🚀 Dobby 爬蟲排程服務已成功啟動...")
+    logger.info("🚀 TargetSystem 爬蟲排程服務已成功啟動...")
     
     # 啟動時先立即執行一次主程序，驗證架構可通
     run_daily_pipeline()

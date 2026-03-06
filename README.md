@@ -13,7 +13,7 @@
 
 ## 📂 專案檔案結構
 
-* `dobby_scraper.py`：主執行檔。包含了 Config 設定、四大爬蟲模組（爬蟲邏輯、下載器、平台對接、排程主函數）。
+* `scraper_template.py`：主執行檔。包含了 Config 設定、四大爬蟲模組（爬蟲邏輯、下載器、平台對接、排程主函數）。
 * `requirements.txt`：Python 依賴套件清單。
 * （產出物） `All_Reports_Scraping_Analysis.xlsx`：提供給開發工程師的終極目標網址與爬取難度評估表（共 55 份澳洲與倫敦報告）。
 
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ### 2. 接手開發 (需實作之 TODO清單)
 
-請打開 `dobby_scraper.py` 並搜尋 `TODO` 標籤：
+請打開 `scraper_template.py` 並搜尋 `TODO` 標籤：
 
 1. **設定環境變數 (模組 1)**：更改 `DOBBY_API_ENDPOINT` 以及您的安全 `DOBBY_API_TOKEN`，並確認 `BASE_DOWNLOAD_DIR` 目錄於運行主機上存在有寫入權限。
 2. **擴充解析邏輯 (模組 2)**：
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 本機測試：
 ```bash
-python3 dobby_scraper.py
+python3 scraper_template.py
 ```
 
 伺服器上線建議：
